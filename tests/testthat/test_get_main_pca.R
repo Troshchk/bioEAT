@@ -3,10 +3,10 @@ library("openxlsx")
 
 test_that("PCA components returned correctly", {
 
-  main3 <- c("ENSMMUG00000062077", "ENSMMUG00000051300","ENSMMUG00000055690")
-  main5 <- c("ENSMMUG00000062077", "ENSMMUG00000051300", "ENSMMUG00000055690", "ENSMMUG00000014899", "ENSMMUG00000004852")
+  main3 <- c("ENSMMUG00000062077", "ENSMMUG00000004852","ENSMMUG00000055242")
+  main5 <- c("ENSMMUG00000062077", "ENSMMUG00000004852", "ENSMMUG00000055242", "ENSMMUG00000011153", "ENSMMUG00000060797")
 
-  df <- read.xlsx("/Users/kseniatroshchenkova/Downloads/mRNA_normalized_CPM.xlsx", rowNames = TRUE)
+  df <- read.xlsx("../test_df.xlsx", rowNames = TRUE)
 
   expect_equal(length(get_main_pca(df, 3)), 3)
   expect_setequal(get_main_pca(df, 3), main3)

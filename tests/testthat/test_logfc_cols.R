@@ -3,7 +3,7 @@ library("openxlsx")
 
 test_that("LOGfc is calculate corectly", {
 
-  df <- read.xlsx("/Users/kseniatroshchenkova/Downloads/mRNA_normalized_CPM.xlsx", rowNames = TRUE)
+  df <- read.xlsx("../test_df.xlsx", rowNames = TRUE)
   test_df <- head(df, 10)
   colnames(test_df)[1:2] <- c("test1", "test2")
 

@@ -2,7 +2,7 @@
 % Please edit documentation in R/get_main_pca.R
 \name{get_main_pca}
 \alias{get_main_pca}
-\title{GETTING MAIN PCA COMPONENTS}
+\title{Getting the main n PCA components}
 \usage{
 get_main_pca(df, n)
 }

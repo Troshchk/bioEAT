@@ -2,17 +2,16 @@
 % Please edit documentation in R/conv_ids_cp.R
 \name{conv_ids_cp}
 \alias{conv_ids_cp}
-\title{CONVERTING IDS USING orgDB
-This function returns a dataframe with the translated IDs}
+\title{Converting gene IDS using orgDB}
 \usage{
 conv_ids_cp(input, from, to, db)
 }
 \arguments{
-\item{input}{vector}
+\item{input}{vector of the IDs to convert}
 
 \item{from}{input ID type}
 
-\item{to}{output ID type or list of output ID types}
+\item{to}{output ID type or vector of output ID types}
 
 \item{db}{annotation database}
 }
@@ -20,8 +19,13 @@ conv_ids_cp(input, from, to, db)
 dataframe with the translated IDs
 }
 \description{
-CONVERTING IDS USING orgDB
-This function returns a dataframe with the translated IDs
+This function returns a dataframe with the translated IDs.
+}
+\details{
+This function takes a vector of IDs and translated them from
+the input format to the output format using the selected orgDB.
+In case the orgDB is not installed before launching the function,
+the function will exit with error.
 }
 \examples{
 conv_ids_cp(rownames(df), "ENSEMBL", c("ENTREZID", "GENENAME"), "org.Mmu.eg.db")

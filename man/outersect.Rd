@@ -2,7 +2,7 @@
 % Please edit documentation in R/outersect.R
 \name{outersect}
 \alias{outersect}
-\title{OUTERSECT OF TWO VECTORS}
+\title{Outersect}
 \usage{
 outersect(x, y)
 }
@@ -15,7 +15,11 @@ outersect(x, y)
 sorted vector of non-overlapping values from lists x and y
 }
 \description{
-This function returns the non-overlapping values from two vectors
+This function returns the non-overlapping values from the two input vectors.
+}
+\details{
+It checks for values from the first inout not appearing in the second input
+and for the values from the second inout not appearing in the first input.
 }
 \examples{
 outersect(df_1[,2],df_2[,2])

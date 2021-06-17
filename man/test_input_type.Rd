@@ -2,24 +2,22 @@
 % Please edit documentation in R/test_input_type.R
 \name{test_input_type}
 \alias{test_input_type}
-\title{CONVERTING IDS USING orgDB
-This function returns a dataframe with the translated IDs}
+\title{Help function for logfc_cols()}
 \usage{
 test_input_type(data, input)
 }
 \arguments{
-\item{input}{string or character or variable}
+\item{data}{input df}
 
-\item{from}{input ID type}
-
-\item{to}{output ID type or list of output ID types}
-
-\item{db}{annotation database}
+\item{input}{column number or column to check}
 }
 \value{
-dataframe with the translated IDs
+error or pass
 }
 \description{
-CONVERTING IDS USING orgDB
-This function returns a dataframe with the translated IDs
+This function checks whether the input exists in the df:
+\itemize{
+\item for strings checks the column names
+\item for numbers checks whether it is smaller than the number of columns
+}
 }

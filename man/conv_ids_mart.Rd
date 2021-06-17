@@ -2,8 +2,7 @@
 % Please edit documentation in R/conv_ids_mart.R
 \name{conv_ids_mart}
 \alias{conv_ids_mart}
-\title{CONVERTING IDS USING maRt
-This function returns a dataframe with the translated IDs}
+\title{Converting gene IDS using maRt}
 \usage{
 conv_ids_mart(input, mart, from, to)
 }
@@ -14,14 +13,16 @@ conv_ids_mart(input, mart, from, to)
 
 \item{from}{input ID type}
 
-\item{to}{output ID type or list of output ID types}
+\item{to}{output ID type or vector of output ID types}
 }
 \value{
 deataframe with translated IDs
 }
 \description{
-CONVERTING IDS USING maRt
-This function returns a dataframe with the translated IDs
+This function returns a dataframe with the translated IDs.
+#'@details
+This function takes a vector of IDs and translated them from
+the input format to the output format using the selected maRt.
 }
 \examples{
 conv_ids_mart(c("CDY2A","IGHM", "IGKC"), "mmulatta_gene_ensembl", "external_gene_name", c("entrezgene_id", "ensembl_gene_id"))

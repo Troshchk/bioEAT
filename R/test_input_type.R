@@ -1,13 +1,13 @@
-#' CONVERTING IDS USING orgDB
-#' This function returns a dataframe with the translated IDs
+#' @title Help function for logfc_cols()
+#' @description 
+#' This function checks whether the input exists in the df:
+#' - for strings checks the column names
+#' - for numbers checks whether it is smaller than the number of columns
 #'
 #' @examples
-#' @param input string or character or variable
-#' @param from input ID type
-#' @param to output ID type or list of output ID types
-#' @param db annotation database
-#' @import clusterProfiler
-#' @return dataframe with the translated IDs
+#' @param data input df
+#' @param input column number or column to check 
+#' @return error or pass
 #' @export
 test_input_type <- function(data, input) {
     if (is.numeric(input)) {
@@ -20,5 +20,5 @@ test_input_type <- function(data, input) {
         if (identical(input %in% colnames(data), FALSE)) {
             stop("Column with the input name does not exist")
         }
-    }
+    } 
 }

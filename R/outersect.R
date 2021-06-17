@@ -1,7 +1,9 @@
-#' OUTERSECT OF TWO VECTORS
-#'
-#' This function returns the non-overlapping values from two vectors
-#'
+#' @title Outersect
+#'@description
+#' This function returns the non-overlapping values from the two input vectors.
+#' @details 
+#' It checks for values from the first inout not appearing in the second input
+#' and for the values from the second inout not appearing in the first input.
 #' @examples
 #' outersect(df_1[,2],df_2[,2])
 #' outersect(1:5, 4:7)

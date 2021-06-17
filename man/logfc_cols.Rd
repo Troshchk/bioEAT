@@ -18,10 +18,19 @@ dataframe with 3 columns col1, col2, log2FC
 }
 \description{
 This function returns dataframe with 3 columns col1, col2, log2FC.
-Mind the column names order: the logFC is always calculated between the first anf the second input
+Mind the column names order: the logFC is always calculated between the first anf the second input.
+}
+\details{
+As an example, when this function is useful is lack of data. In order to find the
+differentially expressed genes more samples are needed. In case of fewer samples an
+alternative approach is to manually calculate the expected behaviour of the desired
+output genes.
+For example, we expect a gene to have lfc > 3 for samples 1vs2 and 5vs6. In this case
+the logfc_cols() function could be used to calculate and order individual logFold changes,
+which could be further used to select the genes with the desired begaviour.
 }
 \examples{
-logfc_cols(dataNorm_df, "selected_column", "5")
-logfc_cols(dataNorm_df, "selected_column", 5)
+logfc_cols(dataNorm_df, "column_name", "5")
+logfc_cols(dataNorm_df, "column_name", 5)
 logfc_cols(dataNorm_df, 1, 5)
 }

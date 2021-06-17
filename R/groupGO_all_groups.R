@@ -1,7 +1,7 @@
-#' GO ANALYSIS AND PLOTS FOR BP, CC, MF
-#'
-#' This function returns table for GO results for BP, CC, MF with gene symbols
-#' The function may also create excel with the GO result tables and the PDFs with the barplots of the results
+#' @title GO analysis and plots for BP, CC, MF
+#' @description
+#' This function returns table for GO results for BP, CC, MF with gene symbols.
+#' The function may also create excel with the GO result tables and the PDFs with the barplots of the results.
 #' @examples
 #' groupGO_all_groups(entrez_ids_list, "org.Mmu.eg.db", "out_name", mf = 1, xls = FALSE, pdf = FALSE)
 #' @param gene_entrezIDs vector of entrezIDs

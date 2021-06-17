@@ -2,7 +2,7 @@
 % Please edit documentation in R/groupGO_all_groups.R
 \name{groupGO_all_groups}
 \alias{groupGO_all_groups}
-\title{GO ANALYSIS AND PLOTS FOR BP, CC, MF}
+\title{GO analysis and plots for BP, CC, MF}
 \usage{
 groupGO_all_groups(
   gene_entrezIDs,
@@ -36,8 +36,8 @@ groupGO_all_groups(
 table with groupGO result arranged as list of dataframes
 }
 \description{
-This function returns table for GO results for BP, CC, MF with gene symbols
-The function may also create excel with the GO result tables and the PDFs with the barplots of the results
+This function returns table for GO results for BP, CC, MF with gene symbols.
+The function may also create excel with the GO result tables and the PDFs with the barplots of the results.
 }
 \examples{
 groupGO_all_groups(entrez_ids_list, "org.Mmu.eg.db", "out_name", mf = 1, xls = FALSE, pdf = FALSE)

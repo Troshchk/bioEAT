@@ -1,12 +1,17 @@
-#' CONVERTING IDS USING orgDB
-#' This function returns a dataframe with the translated IDs
-#'
+#' @title Converting gene IDS using orgDB
+#' @description
+#' This function returns a dataframe with the translated IDs.
+#'@details
+#' This function takes a vector of IDs and translated them from 
+#' the input format to the output format using the selected orgDB.
+#' In case the orgDB is not installed before launching the function,
+#' the function will exit with error.
 #' @examples
 #' conv_ids_cp(rownames(df), "ENSEMBL", c("ENTREZID", "GENENAME"), "org.Mmu.eg.db")
 #' conv_ids_cp(c("IFNA1", "IFNA13", "SLC2A3"), "SYMBOL", "ENSEMBL", "org.Mmu.eg.db")
-#' @param input vector
+#' @param input vector of the IDs to convert
 #' @param from input ID type
-#' @param to output ID type or list of output ID types
+#' @param to output ID type or vector of output ID types
 #' @param db annotation database
 #' @import clusterProfiler
 #' @return dataframe with the translated IDs
@@ -36,5 +41,4 @@ conv_ids_cp <- function(input, from, to, db) {
     )
 
     return(bitr(my_genes, fromType = from, toType = to, OrgDb = db))
-    
 }

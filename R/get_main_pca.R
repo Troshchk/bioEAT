@@ -1,12 +1,11 @@
-#' GETTING MAIN PCA COMPONENTS
-#'
+#' @title Getting the main n PCA components
+#' @description
 #' This function returns a vector of top n contributors
-#'
 #' @examples
 #' get_main_pca(df, 3)
 #' @param df dataframe with normalized counts (column = sample, row = transcript)
 #' @param n number of top contributors
-#' @import  factoextra
+#' @import factoextra
 #' @return vector of top n contributors
 #' @export
 get_main_pca <- function(df, n) {

@@ -1,10 +1,19 @@
-#' CONVERTING IDS USING orgDB and maRt
-#' This function returns a dataframe with translated IDs and NA row for not anootated genes.
-#' It works only with the following IDs: SYMBOL, ENTREZID, GENENAME, ENSEMBL
-#'
+#' @title Converting gene IDS using orgDB and maRt
+#' @description
+#' This function returns a dataframe with translated IDs and NA row for the not anootated genes.
+#'@details
+#' This function takes a vector of IDs and translated them from 
+#' the input format to the output format using the selected orgDB. 
+#' The IDs not found by OrgDB are further annotated by maRt.
+#' If the ID was not found it will be at the end of the output dataframe with NAs.
+#' This function works only with the IDs: ENSEMBL ID, SYMBOL, ENTREZID
+#' In case the orgDB is not installed before launching the function,
+#' the function will exit with error.
 #' @examples
-#' conv_ids_full(rownames(dataNorm_df), "org.Mmu.eg.db", "mmulatta_gene_ensembl", "ENSEMBL", "ensembl_gene_id")
-#' conv_ids_full(c("IFNA13", "SLC2A3", "CD45RA", "CDY2A", "IGHM", "IGKC"), "org.Mmu.eg.db",  "SYMBOL", "mmulatta_gene_ensembl", "external_gene_name")
+#' conv_ids_full(rownames(dataNorm_df), "org.Mmu.eg.db", "ENSEMBL",
+#' "mmulatta_gene_ensembl", "ensembl_gene_id")
+#' conv_ids_full(c("IFNA13", "SLC2A3", "CD45RA", "CDY2A", "IGHM", "IGKC"), "org.Mmu.eg.db",  
+#' "SYMBOL", "mmulatta_gene_ensembl", "external_gene_name")
 #' @param input vector of IDs
 #' @param from_cluster_profiler input clusterProfiler ID type: ENSEMBL, ENTREZID, SYMBOL
 #' @param from_mart input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id

@@ -4,7 +4,6 @@
 #' - for strings checks the column names
 #' - for numbers checks whether it is smaller than the number of columns
 #'
-#' @examples
 #' @param data input df
 #' @param input column number or column to check 
 #' @return error or pass

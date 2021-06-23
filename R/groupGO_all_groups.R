@@ -13,7 +13,7 @@
 #' @param xls logical parameter to create excel with with default TRUE
 #' @param pdf logical parameter to create pdf with with default TRUE
 #' @return table with groupGO result arranged as list of dataframes
-#' @output excel file with groupGO result and the pdf with the groupGO result barplot
+#' @return excel file with groupGO result and the pdf with the groupGO result barplot
 #' per biological process, cellular component and molecular function
 #' @import clusterProfiler
 #' @import openxlsx

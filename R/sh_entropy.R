@@ -19,14 +19,14 @@
 #' @param name name of the output pdf with defult "Shannon entropy", used when pdf is TRUE
 #' @param pdf logical parameter to create pdf with with default TRUE
 #' @param relevel logical parameter to reorder the samples order in the plots with default FALSE
-#' @param levels vector with the correct order of the samples; will be used only if relevel is TRUE
+#' @param levels vector with the correct order of the samples with default NULL; will be used only if relevel is TRUE 
 #' @import plyr
 #' @import reshape2
 #' @import ggplot2
 #' @return list with the entropy levels and plots
 #' @export
 sh_entropy <- function(df, name = "Shannon entropy", pdf = TRUE, relevel = FALSE, levels = NULL) {
-    
+
     if (length(df) == 0 || is.na(df) || is.null(df)) {
         stop("The input dataframe is empty")
     }
@@ -35,6 +35,15 @@ sh_entropy <- function(df, name = "Shannon entropy", pdf = TRUE, relevel = FALSE
         if (!is.double(df[, i])) {
             stop("The input dataframe contains non-numeric data")
         }
+    }
+
+    if (relevel == TRUE & ncol(df) != length(unique(levels))) {
+        stop("The levels vector contains less unique elements than the  amount of columns in the input dataframe")
+    }
+
+    # Making sure the samples will not be releveled
+    if (relevel == FALSE){
+        levels <- NULL
     }
 
     out_list <- list()
@@ -69,9 +78,7 @@ sh_entropy <- function(df, name = "Shannon entropy", pdf = TRUE, relevel = FALSE
     # relevel factor to display in the correct order, if TRUE
     p1 <- ggplot(
         data = df_total_entropy,
-        # aes(x = forcats::fct_relevel(sample,levels), y = df_total_entropy)) +
-        aes(x = sample, y = df_total_entropy)
-    ) +
+        aes(x = forcats::fct_relevel(sample, as.character(levels)), y = df_total_entropy)) +
         geom_bar(stat = "identity", fill = "#7570B3") +
         theme(axis.text.x = element_text(angle = 90, hjust = 1)) +
         labs(y = "Entropy", x = "") +
@@ -86,8 +93,7 @@ sh_entropy <- function(df, name = "Shannon entropy", pdf = TRUE, relevel = FALSE
     # transcripts ordered from highest to lowest values
     p2 <- ggplot(
         df_ent_melt,
-        aes(fill = reorder(Transcript, Value), y = Value, x = Sample)
-    ) +
+        aes(fill = reorder(Transcript, Value), y = Value, x = Sample)) +
         geom_bar(position = "fill", stat = "identity") +
         theme(legend.position = "none") +
         scale_fill_manual(values = values) +

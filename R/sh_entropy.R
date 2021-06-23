@@ -3,16 +3,16 @@
 #' @description
 #' This function returns a list, containing dataframe with the entropy
 #' values per sample,
-#' entrope plot and transcriptfrequency plot
+#' entropy plot and transcript frequency plot
 #' @details
 #' This function takes a dataframe with transcripts in rows and samples in
 #' columns as an input and calculates the Shannon entropy for each sample
 #' and the frequency of the transcript in the sample. Further it visualizes
-#' the entropy levels and the frequencies. The transcripts are reordered by 
+#' the entropy levels and the frequencies. The transcripts are reordered by
 #' their frequencies.
 #' Function can also print the plots to pdf if pdf parameter is TRUE.
 #' @examples
-#' sh_entropy(df, "name", relevel = TRUE, levels = c(seq(1, 30, 1)))
+#' sh_entropy(df, "name", relevel = TRUE, levels = c(seq(1, ncol(df), 1)))
 #' sh_entropy(df)
 #' sh_entropy(df, pdf = FALSE)
 #' @param df input dataframe with transcripts in rows and samples in columns

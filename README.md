@@ -24,7 +24,7 @@ For the data exploration:
 - find the non-overlapping elements of two vectors with ```outersect()```
 - get main n pca components with ```get_main_pca()```
 - calculate the logFold change between two dataframe columns and order the result with ```logfc()```
-- calculate and visualize Shannon entropy ```sh_entropy()```
+- calculate and visualize Shannon entropy ```sh_entropy()``` ([usage expanation and example](https://ksenia-bioinfo.medium.com/diversity-of-the-sequencing-sample-with-shannon-entropy-in-r-3b9e8bf208d4))
 
 For the data annotation:
 - use OrgDB and maRt in one function with ```conv_ids_full()```

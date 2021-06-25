@@ -35,7 +35,7 @@ conv_ids_full <- function(input, db_cluster_profiler, from_cluster_profiler, mar
     # Searching genes with clusterProfiler; genes not annotated by clusterProfiler are written to not_annot variable
 
 
-    if (length(input) == 0 || is.na(input) || is.null(input)) {
+    if (length(input) == 0 || any(is.na(input)) || is.null(input)) {
         stop("The input is empty")
     }
 

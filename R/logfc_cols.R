@@ -24,11 +24,11 @@ logfc_cols <- function(data, col1, col2) {
     
     formalNames <- names(formals())
 
-    if (do.call(missing, list(formalNames[1])) || length(data) == 0 || is.na(data) || is.null(data)) {
+    if (do.call(missing, list(formalNames[1])) || length(data) == 0 || any(is.na(data)) || is.null(data)) {
         stop("The input dataframe is empty or missing")
     }
 
-    if (do.call(missing, list(formalNames[2])) || do.call(missing, list(formalNames[3])) || is.na(col1) || is.null(col1) || is.na(col2) || is.null(col2)) {
+    if (do.call(missing, list(formalNames[2])) || do.call(missing, list(formalNames[3])) || any(is.na(col1)) || is.null(col1) || any(is.na(col2)) || is.null(col2)) {
         stop("The input for column or columns is missing")
     }
 

@@ -18,7 +18,7 @@
 #' @export
 conv_ids_cp <- function(input, from, to, db) {
 
-    if (length(input) == 0 || is.na(input) || is.null(input)) {
+    if (length(input) == 0 || any(is.na(input)) || is.null(input)) {
         stop("The input is empty")
     }
 

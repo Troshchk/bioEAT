@@ -20,7 +20,7 @@
 #' @export
 groupGO_all_groups <- function(gene_entrezIDs, orgDB, name = "", bp = 2, cc = 3, mf = 3, xls = TRUE, pdf = TRUE) {
     
-    if (length(gene_entrezIDs) == 0 || is.na(gene_entrezIDs) || is.null(gene_entrezIDs)) {
+    if (length(gene_entrezIDs) == 0 || any(is.na(gene_entrezIDs)) || is.null(gene_entrezIDs)) {
         stop("The input gene names input is empty")
     }
 

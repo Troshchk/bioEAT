@@ -10,7 +10,7 @@
 #' @export
 get_main_pca <- function(df, n) {
     
-    if (length(df) == 0 || is.na(df) || is.null(df)) {
+    if (length(df) == 0 || any(is.na(df)) || is.null(df)) {
         stop("The input dataframe is empty")
     }
 

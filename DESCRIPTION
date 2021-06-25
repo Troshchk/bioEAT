@@ -12,7 +12,7 @@ Description: The aim of bioEAT is to provide functionality to explore data, make
     - get main n pca components with get_main_pca()
     - calculate the logFold change between two dataframe columns and order the result with logfc()
     For the data annotation:
-    - use OrgDB and maRt in one function with conv_ids_full()
+    - use OrgDB and maRt in one function with conv_ids_full().
 License: MIT + file LICENSE
 BugReports: https://github.com/Troshchk/bioEAT/issues
 Encoding: UTF-8

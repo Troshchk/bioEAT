@@ -1,5 +1,7 @@
 library(bioEAT)
 
+library("org.Mmu.eg.db")
+
 test_that("IDs converted true", {
   genes <- c("IFNA1", "IFNA13", "SLC2A3", "ACOT1", "CD45R0", "CD45RA", "CDY2A","IGHM", "IGKC")
   df <- suppressWarnings(conv_ids_cp(genes, "SYMBOL", c("ENTREZID", "ENSEMBL"), "org.Mmu.eg.db"))

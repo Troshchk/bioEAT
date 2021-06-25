@@ -1,4 +1,5 @@
 library(bioEAT)
+library("org.Mmu.eg.db")
 
 genes <- c("IFNA1", "IFNA13", "SLC2A3", "ACOT1", "CD45R0", "CD45RA", "CDY2A", "IGHM", "IGKC")
 

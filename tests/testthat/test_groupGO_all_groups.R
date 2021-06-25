@@ -1,4 +1,5 @@
 library(bioEAT)
+library("org.Mmu.eg.db")
 
 test_that("groupGO works correctly", {
 

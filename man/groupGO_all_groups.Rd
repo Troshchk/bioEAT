@@ -34,6 +34,9 @@ groupGO_all_groups(
 }
 \value{
 table with groupGO result arranged as list of dataframes
+
+excel file with groupGO result and the pdf with the groupGO result barplot
+per biological process, cellular component and molecular function
 }
 \description{
 This function returns table for GO results for BP, CC, MF with gene symbols.

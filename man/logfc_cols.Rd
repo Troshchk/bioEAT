@@ -7,11 +7,11 @@
 logfc_cols(data, col1, col2)
 }
 \arguments{
+\item{data}{dataframe with normalized counts}
+
 \item{col1}{name or number of the column in df}
 
 \item{col2}{name or number the column in df}
-
-\item{df}{dataframe with normalized counts}
 }
 \value{
 dataframe with 3 columns col1, col2, log2FC

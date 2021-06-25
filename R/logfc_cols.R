@@ -14,7 +14,7 @@
 #' logfc_cols(dataNorm_df, "column_name", "5")
 #' logfc_cols(dataNorm_df, "column_name", 5)
 #' logfc_cols(dataNorm_df, 1, 5)
-#' @param df dataframe with normalized counts
+#' @param data dataframe with normalized counts
 #' @param col1 name or number of the column in df
 #' @param col2 name or number the column in df
 #' @return dataframe with 3 columns col1, col2, log2FC

@@ -25,5 +25,6 @@ This function takes a vector of IDs and translated them from
 the input format to the output format using the selected maRt.
 }
 \examples{
-conv_ids_mart(c("CDY2A","IGHM", "IGKC"), "mmulatta_gene_ensembl", "external_gene_name", c("entrezgene_id", "ensembl_gene_id"))
+conv_ids_mart(c("CDY2A","IGHM", "IGKC"), "mmulatta_gene_ensembl", "external_gene_name", 
+c("entrezgene_id", "ensembl_gene_id"))
 }

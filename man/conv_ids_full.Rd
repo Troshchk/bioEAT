@@ -19,7 +19,9 @@ conv_ids_full(
 
 \item{from_cluster_profiler}{input clusterProfiler ID type: ENSEMBL, ENTREZID, SYMBOL}
 
-\item{from_mart}{annotation mart}
+\item{mart}{annotation mart}
+
+\item{from_mart}{input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id}
 }
 \value{
 dataframe with the ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description); NAs are not dropped
@@ -37,6 +39,8 @@ In case the orgDB is not installed before launching the function,
 the function will exit with error.
 }
 \examples{
-conv_ids_full(rownames(dataNorm_df), "org.Mmu.eg.db", "ENSEMBL", "mmulatta_gene_ensembl", "ensembl_gene_id")
-conv_ids_full(c("IFNA13", "SLC2A3", "CD45RA", "CDY2A", "IGHM", "IGKC"), "org.Mmu.eg.db",  "SYMBOL", "mmulatta_gene_ensembl", "external_gene_name")
+conv_ids_full(rownames(dataNorm_df), "org.Mmu.eg.db", "ENSEMBL",
+"mmulatta_gene_ensembl", "ensembl_gene_id")
+conv_ids_full(c("IFNA13", "SLC2A3", "CD45RA", "CDY2A", "IGHM", "IGKC"), "org.Mmu.eg.db",  
+"SYMBOL", "mmulatta_gene_ensembl", "external_gene_name")
 }

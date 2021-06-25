@@ -15,10 +15,10 @@
 #' conv_ids_full(c("IFNA13", "SLC2A3", "CD45RA", "CDY2A", "IGHM", "IGKC"), "org.Mmu.eg.db",  
 #' "SYMBOL", "mmulatta_gene_ensembl", "external_gene_name")
 #' @param input vector of IDs
-#' @param from_cluster_profiler input clusterProfiler ID type: ENSEMBL, ENTREZID, SYMBOL
-#' @param from_mart input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id
 #' @param db_cluster_profiler annotation clusterProfiler database
-#' @param from_mart annotation mart
+#' @param from_cluster_profiler input clusterProfiler ID type: ENSEMBL, ENTREZID, SYMBOL
+#' @param mart annotation mart
+#' @param from_mart input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id
 #' @import clusterProfiler
 #' @import biomaRt
 #' @return dataframe with the ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description); NAs are not dropped

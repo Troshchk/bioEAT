@@ -27,7 +27,7 @@
 #' @export
 sh_entropy <- function(df, name = "Shannon entropy", pdf = TRUE, relevel = FALSE, levels = NULL) {
 
-    if (length(df) == 0 || is.na(df) || is.null(df)) {
+    if (length(df) == 0 || any(is.na(df)) || is.null(df)) {
         stop("The input dataframe is empty")
     }
 

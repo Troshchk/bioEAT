@@ -52,14 +52,14 @@ conv_ids_full <- function(input, db_cluster_profiler, from_cluster_profiler, mar
   
     if(calculate_cp) { 
         message("None of IDs found using clusterProfiler.")
-        ann1 <- NA
+        #ann1 <- NULL
     } else {
         ann1 <- conv_ids_cp(input, from_cluster_profiler, c("SYMBOL", "ENTREZID", "GENENAME", "ENSEMBL"), db_cluster_profiler)
         ann1 <- ann1[c("ENSEMBL", "SYMBOL", "ENTREZID", "GENENAME")]
     }
 
-    if (is.na(ann1)) {
-        ann1 <- NULL
+    if (is.null(ann1)) {
+        #ann1 <- NULL
         not_annot <- input
     } else {
         not_annot <- outersect(ann1[, column_to_compare], input)

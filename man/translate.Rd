@@ -23,14 +23,14 @@ translate(
 
 \item{homologeneFile}{homology table -- https://ftp.ncbi.nih.gov/pub/HomoloGene/current/homologene.data}
 
-\item{db_cluster_profiler}{annotation clusterProfiler database}
+\item{db_cluster_profiler}{annotation clusterProfiler database for the input organism; necessary only if the input ID is not ENTREZ ID}
 
-\item{from_mart}{input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id}
+\item{from_mart}{input maRt ID type for the input organism: ensembl_gene_id, external_gene_name, entrezgene_id; necessary only if the input ID is not ENTREZ ID}
 
-\item{mart}{annotation martL}
+\item{mart}{annotation maRt for the input organism; necessary only if the input ID is not ENTREZ ID}
 }
 \value{
-dataframe with the ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description); NAs are not dropped
+dataframe with the input IDs(if different from ENTREZ ID), input ENTREZ ID, output ENTREZ ID of the target organism; NAs are not dropped
 }
 \description{
 This function returns a dataframe with homolog IDs and NA row for the genes with no homologs.

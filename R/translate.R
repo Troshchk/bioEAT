@@ -16,13 +16,13 @@
 #' @param taxid taxonomy ID of the target species -- https://www.ncbi.nlm.nih.gov/Taxonomy/Browser
 #' @param from_id input ID type with default "ENTREZID", other possible: "ENSEMBL", "SYMBOL"
 #' @param homologeneFile homology table -- https://ftp.ncbi.nih.gov/pub/HomoloGene/current/homologene.data
-#' @param db_cluster_profiler annotation clusterProfiler database
-#' @param mart annotation martL
-#' @param from_mart input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id
+#' @param db_cluster_profiler annotation clusterProfiler database for the input organism; necessary only if the input ID is not ENTREZ ID 
+#' @param mart annotation maRt for the input organism; necessary only if the input ID is not ENTREZ ID 
+#' @param from_mart input maRt ID type for the input organism: ensembl_gene_id, external_gene_name, entrezgene_id; necessary only if the input ID is not ENTREZ ID 
 #' @import clusterProfiler
 #' @import biomaRt
 #' @import annotationTools
-#' @return dataframe with the ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description); NAs are not dropped
+#' @return dataframe with the input IDs(if different from ENTREZ ID), input ENTREZ ID, output ENTREZ ID of the target organism; NAs are not dropped
 #' @export
 translate <- function(input, taxid, from_id = "ENTREZID", homologeneFile, db_cluster_profiler = NULL, from_mart = NULL, mart = NULL) {
     myGenes_ent <- NULL #  dataframe with converted input IDs from input type to ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description)

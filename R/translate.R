@@ -21,11 +21,9 @@
 #' @param from_mart input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id
 #' @import clusterProfiler
 #' @import biomaRt
+#' @import annotationTools
 #' @return dataframe with the ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description); NAs are not dropped
 #' @export
-#'
-#'
-#' input, db_cluster_profiler, from_cluster_profiler, mart, from_mart
 translate <- function(input, taxid, from_id = "ENTREZID", homologeneFile, db_cluster_profiler = NULL, from_mart = NULL, mart = NULL) {
     myGenes_ent <- NULL #  dataframe with converted input IDs from input type to ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description)
     myGenes_translated <- NULL # dataframe with input IDs, input ENTREZIDs and the output ENTREZIDs

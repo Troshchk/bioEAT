@@ -17,11 +17,11 @@ translate(
 \arguments{
 \item{input}{vector of IDs}
 
-\item{taxid}{taxonomy ID of the target species -- https://www.ncbi.nlm.nih.gov/Taxonomy/Browser/wwwtax.cgi?mode=Undef&name=Mus+musculus&lvl=0&srchmode=1&keep=1&unlock}
+\item{taxid}{taxonomy ID of the target species -- https://www.ncbi.nlm.nih.gov/Taxonomy/Browser}
 
 \item{from_id}{input ID type with default "ENTREZID", other possible: "ENSEMBL", "SYMBOL"}
 
-\item{homologeneFile}{homology table}
+\item{homologeneFile}{homology table -- https://ftp.ncbi.nih.gov/pub/HomoloGene/current/homologene.data}
 
 \item{db_cluster_profiler}{annotation clusterProfiler database}
 
@@ -41,8 +41,10 @@ they are converted to the ENTREZ ID format. Next, the homologs of the IDs are fo
 the homologeneFile. The IDs which were not coverted  and the IDs without homologs are returned.
 }
 \examples{
-translate(rownames(dataNorm_df), 9544, homologeneFile = path_to_file)
-translate(rownames(dataNorm_df), 9544, from_id = "ENSEMBL", homologeneFile = path_to_file, 
-          db_cluster_profiler = "org.Mmu.eg.db", mart ="mmulatta_gene_ensembl", 
-          from_mart = "ensembl_gene_id")
+translate(rownames(dataNorm_df), 9606, homologeneFile = file)
+translate(rownames(dataNorm_df), 9606,
+    from_id = "ENSEMBL", homologeneFile = file,
+    db_cluster_profiler = "org.Mmu.eg.db", mart = "mmulatta_gene_ensembl",
+    from_mart = "ensembl_gene_id"
+)
 }

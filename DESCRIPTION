@@ -29,7 +29,8 @@ Imports:
     gtools,
     plyr,
     reshape2,
-    ggplot2
+    ggplot2,
+    annotationTools
 Suggests: 
     testthat (>= 3.0.0),
     org.Mmu.eg.db (== 3.12.0)

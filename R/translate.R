@@ -22,9 +22,11 @@
 #' @import clusterProfiler
 #' @import biomaRt
 #' @import annotationTools
+#' @importFrom tidyr separate_rows
 #' @return dataframe with the input IDs(if different from ENTREZ ID), input ENTREZ ID, output ENTREZ ID of the target organism; NAs are not dropped
 #' @export
 translate <- function(input, taxid, from_id = "ENTREZID", homologeneFile, db_cluster_profiler = NULL, from_mart = NULL, mart = NULL) {
+    
     myGenes_ent <- NULL #  dataframe with converted input IDs from input type to ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description)
     myGenes_translated <- NULL # dataframe with input IDs, input ENTREZIDs and the output ENTREZIDs
 
@@ -67,5 +69,11 @@ translate <- function(input, taxid, from_id = "ENTREZID", homologeneFile, db_clu
         colnames(myGenes_translated) <- c("ENTREZID_input", paste(from_id, "_input"), "ENTREZID_output")
     }
 
+    # In case a column contains multiple values -- divide into rows so there will be only one output ENTREZ ID per row
+    myGenes_translated <- separate_rows(myGenes_translated,ENTREZID_output,sep=",\\s+")
+    myGenes_translated$ENTREZID_output <- gsub("c\\(|\\)", "", myGenes_translated$ENTREZID_output)
+
+    #Rows containing NAs will be omitted 
+    myGenes_translated <- na.omit(myGenes_translated)
     return(myGenes_translated)
 }

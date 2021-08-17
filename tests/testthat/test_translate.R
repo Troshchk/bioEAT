@@ -41,13 +41,13 @@ test_that("IDs are translated correctly", {
   ))
 
   expect_equal(nrow(to_homo), 14)
-  expect_equal(to_homo[1,1], "100187576")
-  expect_equal(to_homo[4,2], "ENSMMUG00000011153")
+  expect_equal(as.character(to_homo[1,1]), "100187576")
+  expect_equal(as.character(to_homo[4,2]), "ENSMMUG00000011153")
 
 
   expect_equal(nrow(to_homo_from_ent), 14)
-  expect_equal(to_homo_from_ent[1,1], "100187576")
-  expect_equal(to_homo_from_ent[4,2], "60")
+  expect_equal(as.character(to_homo_from_ent[1,1]), "100187576")
+  expect_equal(as.character(to_homo_from_ent[4,2]), "60")
 
 
 })

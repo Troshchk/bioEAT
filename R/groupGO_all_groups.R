@@ -15,8 +15,8 @@
 #' @return table with groupGO result arranged as list of dataframes
 #' @return excel file with groupGO result and the pdf with the groupGO result barplot
 #' per biological process, cellular component and molecular function
-#' @import clusterProfiler
-#' @import openxlsx
+#' @importFrom clusterProfiler groupGO
+#' @importFrom openxlsx write.xlsx
 #' @export
 groupGO_all_groups <- function(gene_entrezIDs, orgDB, name = "", bp = 2, cc = 3, mf = 3, xls = TRUE, pdf = TRUE) {
     

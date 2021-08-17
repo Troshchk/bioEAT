@@ -19,8 +19,6 @@
 #' @param from_cluster_profiler input clusterProfiler ID type: ENSEMBL, ENTREZID, SYMBOL
 #' @param mart annotation mart
 #' @param from_mart input maRt ID type: ensembl_gene_id, external_gene_name, entrezgene_id
-#' @import clusterProfiler
-#' @import biomaRt
 #' @return dataframe with the ENSEMBL ID, SYMBOL, ENTREZID, GENENAME(description); NAs are not dropped
 #' @export
 #' 

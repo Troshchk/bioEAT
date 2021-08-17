@@ -11,8 +11,10 @@
 #' @param mart annotation maRt
 #' @param from input ID type
 #' @param to output ID type or vector of output ID types
-#' @return deataframe with translated IDs
-#' @import biomaRt
+#' @return dataframe with translated IDs
+#' @importFrom biomaRt getBM
+#' @importFrom biomaRt useMart
+#' @importFrom biomaRt useDataset
 #' @export
 conv_ids_mart <- function(input, mart, from, to) {
     

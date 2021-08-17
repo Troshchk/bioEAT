@@ -18,7 +18,8 @@
 #' @param col1 name or number of the column in df
 #' @param col2 name or number the column in df
 #' @return dataframe with 3 columns col1, col2, log2FC
-#' @import gtools
+#' @importFrom gtools foldchange
+#' @importFrom gtools foldchange2logratio
 #' @export
 logfc_cols <- function(data, col1, col2) {
     

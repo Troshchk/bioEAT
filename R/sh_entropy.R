@@ -20,8 +20,8 @@
 #' @param pdf logical parameter to create pdf with with default TRUE
 #' @param relevel logical parameter to reorder the samples order in the plots with default FALSE
 #' @param levels vector with the correct order of the samples with default NULL; will be used only if relevel is TRUE 
-#' @import plyr
-#' @import reshape2
+#' @importFrom plyr ldply
+#' @importFrom reshape2 melt
 #' @import ggplot2
 #' @return list with the entropy levels and plots
 #' @export

@@ -19,9 +19,7 @@
 #' @param db_cluster_profiler annotation clusterProfiler database for the input organism; necessary only if the input ID is not ENTREZ ID 
 #' @param mart annotation maRt for the input organism; necessary only if the input ID is not ENTREZ ID 
 #' @param from_mart input maRt ID type for the input organism: ensembl_gene_id, external_gene_name, entrezgene_id; necessary only if the input ID is not ENTREZ ID 
-#' @import clusterProfiler
-#' @import biomaRt
-#' @import annotationTools
+#' @importFrom annotationTools getHOMOLOG
 #' @importFrom tidyr separate_rows
 #' @return dataframe with the input IDs(if different from ENTREZ ID), input ENTREZ ID, output ENTREZ ID of the target organism; NAs are not dropped
 #' @export

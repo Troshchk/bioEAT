@@ -13,7 +13,7 @@
 #' @param from input ID type
 #' @param to output ID type or vector of output ID types
 #' @param db annotation database
-#' @import clusterProfiler
+#' @importFrom clusterProfiler bitr
 #' @return dataframe with the translated IDs
 #' @export
 conv_ids_cp <- function(input, from, to, db) {

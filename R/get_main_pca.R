@@ -5,7 +5,7 @@
 #' get_main_pca(df, 3)
 #' @param df dataframe with normalized counts (column = sample, row = transcript)
 #' @param n number of top contributors
-#' @import factoextra
+#' @importFrom factoextra get_pca
 #' @return vector of top n contributors
 #' @export
 get_main_pca <- function(df, n) {

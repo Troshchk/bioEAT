@@ -16,7 +16,7 @@ conv_ids_mart(input, mart, from, to)
 \item{to}{output ID type or vector of output ID types}
 }
 \value{
-deataframe with translated IDs
+dataframe with translated IDs
 }
 \description{
 This function returns a dataframe with the translated IDs.

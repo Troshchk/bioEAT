@@ -8,6 +8,7 @@
 #' @param input column number or column to check 
 #' @return error or pass
 #' @export
+#' @keyword Internal
 test_input_type <- function(data, input) {
     if (is.numeric(input)) {
         if (ncol(data) < input) {
